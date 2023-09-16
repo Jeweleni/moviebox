@@ -109,7 +109,7 @@ function App() {
       <main className="text-black mb-20">
         <section className="w-[90%] mx-auto">
           <div className="flex justify-between items-start">
-            <h2 className="mb-8 text-2xl md:text-3xl font-semibold">Featured Movies</h2>
+            <h2 className="mb-8 text-2xl md:text-3xl font-semibold">Featured Movie</h2>
             <Link to="/" style={{ color: '#e21e48' }}>
               <span className="flex gap-2 items-center">
                 <span>See more</span>
