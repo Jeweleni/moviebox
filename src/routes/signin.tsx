@@ -1,8 +1,5 @@
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-
-import Home from './home';
-
-function signin() {
+import React from "react";
+const signin = () => {
   return (
     <>
       <h1 className="flex justify-center items-center text-red-500 bg-gray-100 font-extrabold ">
