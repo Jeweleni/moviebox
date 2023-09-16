@@ -14,7 +14,7 @@ const Movie = () => {
 
   const { data, isLoading, isError, error, refetch, isRefetching } = useQuery<{ data: MovieType }>(
     ['movie-by-id'],
-    () => axios.get(`https://api.themoviedb.org/3/movie/top_rated/${id}&api_key=${API_KEY}`),
+    () => axios.get(`https://api.themoviedb.org/3/movie/${id}&api_key=${API_KEY}`),
     {
       enabled: Boolean(id),
       refetchOnWindowFocus: false,

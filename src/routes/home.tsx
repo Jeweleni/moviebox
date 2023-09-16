@@ -30,10 +30,7 @@ function App() {
 
   const { data, isLoading, isError, isRefetching, refetch, error } = useQuery(
     ['top-rated'],
-    () =>
-      axios.get(
-        `https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1&api_key=${API_KEY}`
-      ),
+    () => axios.get(`https://api.themoviedb.org/3/movie?language=en-US&page=1&api_key=${API_KEY}`),
     {
       refetchOnWindowFocus: false,
       refetchOnReconnect: false,

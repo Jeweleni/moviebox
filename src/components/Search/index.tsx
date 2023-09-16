@@ -16,7 +16,7 @@ const Search: FC = () => {
 
   const fetchMovieSearchResults = async () => {
     const response = await axios.get(
-      `https://api.themoviedb.org/3/search/movie/top_rated?query=${encodeURIComponent(
+      `https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(
         debouncedSearch
       )}&api_key=${API_KEY}`
     );
