@@ -1,6 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+// import { FaGithub, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+// import { IoLogoTwitter } from 'react-icons/io';
 import { Movie, CustomError as CustomErrorType } from '../types';
 import {
   Logo,
@@ -30,7 +32,10 @@ function App() {
 
   const { data, isLoading, isError, isRefetching, refetch, error } = useQuery(
     ['top-rated'],
-    () => axios.get(`https://api.themoviedb.org/3/movie?language=en-US&page=1&api_key=${API_KEY}`),
+    () =>
+      axios.get(
+        `https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1&api_key=${API_KEY}`
+      ),
     {
       refetchOnWindowFocus: false,
       refetchOnReconnect: false,
@@ -61,7 +66,7 @@ function App() {
         </div>
         <div className="flex gap-8 items-center">
           <Link style={{ color: 'white' }} to="./signin">
-            Sign in
+            Sign In
           </Link>
           <img src={Menu} alt="Menu" />
         </div>
@@ -104,7 +109,7 @@ function App() {
       <main className="text-black mb-20">
         <section className="w-[90%] mx-auto">
           <div className="flex justify-between items-start">
-            <h2 className="mb-8 text-2xl md:text-3xl font-semibold">Featured Movie</h2>
+            <h2 className="mb-8 text-2xl md:text-3xl font-semibold">Featured Movies</h2>
             <Link to="/" style={{ color: '#e21e48' }}>
               <span className="flex gap-2 items-center">
                 <span>See more</span>
@@ -114,7 +119,7 @@ function App() {
           </div>
           {isLoading || isRefetching ? (
             <div className="min-h-[150px] flex items-center justify-center font-semibold text-md sm:text-lg md:text-xl">
-              Fetching Top Rated Movies ...
+              Fetching Movies ...
             </div>
           ) : isError ? (
             <Error
@@ -163,6 +168,25 @@ function App() {
               </span>
             );
           })}
+        </div>
+
+        {/* <div className="flex gap-4 items-center justify-center mb-6">
+          <a href="https://github.com/Jeweleni">
+            <FaGithub />
+          </a>
+          <a href="https://twitter.com/jeweleni_diva">
+            <IoLogoTwitter />
+          </a>
+          <a href="https://www.instagram.com/emj_creates">
+            <FaInstagram />{' '}
+          </a>
+          <a href="https://www.linkedin.com/in/momoreoluwajeweleni/">
+            <FaLinkedinIn />
+          </a>
+        </div> */}
+
+        <div className="footer__copyright">
+          <p>©EMJCreates_ 2023. All rights reserved.</p>
         </div>
         <div className="text-center text-gray-500 text-sm mb-12 font-semibold">
           &copy; EMJ Create MovieBox 2023
