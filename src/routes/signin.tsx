@@ -1,5 +1,4 @@
-import React from "react";
-const signin = () => {
+function signin() {
   return (
     <>
       <h1 className="flex justify-center items-center text-red-500 bg-gray-100 font-extrabold ">
